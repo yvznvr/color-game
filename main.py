@@ -12,10 +12,6 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from copy import copy
 
 
-def callback(instance):
-    print(instance.background_color, instance.id)
-
-
 def getcolor():
     color = []
     for i in range(4):
