@@ -1,0 +1,47 @@
+<MyWidget>:
+	grid: grid
+	skor: skor
+	BoxLayout:
+		padding: 50
+		BoxLayout:
+			orientation: 'vertical'
+			padding: 15
+			Label:
+				id: skor
+				size_hint: None,None
+				size: (50,50)
+				markup: True
+			GridLayout:
+				id: grid
+				rows: 3
+				cols: 3
+
+<StartScreen>:
+	GridLayout:
+		cols: 1
+		padding: 200
+		Label:
+			markup: True
+			text: '[color=000000]Farklı Rengi Bulma Oyunu[/color]'
+		Button:
+			markup: True
+			text: 'Başla'
+			on_press: app.start()
+
+			
+<Manager>:
+	id: screen_manager
+	start_screen: start_screen
+	my_game: my_game
+
+	StartScreen:
+		id: start_screen
+		name: 'menu'
+		manager: screen_manager
+
+	MyWidget:
+		id: my_game
+		name: 'game'
+		manager: screen_manager
+
+
